@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{
+int len,i,j,temp=0,n,mx,k;
+printf("enter the total no of eliments need to be stored");
+scanf("%d",&n);
+int arr[n];
+for(i=0;i<n;i++)
+scanf("%d",&arr[i]);
+for(i=0;i<n;i++)
+{
+    mx=i;
+    for(j=i+1;j<n;j++)
+    if(arr[mx]<arr[j])
+    mx=j;
+    temp=arr[mx];
+    arr[mx]=arr[j];
+    arr[j]=arr[temp];
+}
+for(int i=0;i<n;i++)
+{
+    printf("%d",arr[i]);
+}
+    return 0;
+}
